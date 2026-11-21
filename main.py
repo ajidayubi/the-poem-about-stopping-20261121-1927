@@ -18,9 +18,12 @@ and staying is a kind of going."""
 
 
 def main():
+    text = POEM + "\n"
+    if not 1 <= len(text) <= 280:
+        raise SystemExit(f"entry is {len(text)} code points, must be 1-280")
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
-        f.write(POEM + "\n")
+        f.write(text)
 
 
 if __name__ == "__main__":
